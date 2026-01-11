@@ -1,4 +1,6 @@
 #Designed to work on nightly as of july IKEMEN GO. 
+#By Kamekaze
+#version 1.0
 #Do NOT ask me to make it work for anything older it's impossible.
 [statedef +1]
 #something is reflecting
