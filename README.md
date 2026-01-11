@@ -3,7 +3,7 @@
 
 ## Instructions
 
-This plug and play armor works by the player 
+This plug and play reflection works by the player 
 turning the map "k_reflecting" on, once it is on
 it will activate any attack that has this map set to 1 or higher
 will reflect any helper or projectile that is trying to actively attack
