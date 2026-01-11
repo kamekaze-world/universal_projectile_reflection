@@ -14,7 +14,8 @@ it.
 If you want to assert that your projectile or helper cannot be reflected you
 need to set the sysvar(1) for the helper to a non zero value and for helpers
 or add const(bit16) to your projectile id when its spawned. **If your helper 
-uses projectiles for priority shields you must do both of these things.**
+uses projectiles for priority shields you must do both of these things. Also, 
+your helper must be using projectile hit attributes or it will get ignored aka NP,SP,HP,AP **
 
 EG for helpers in cns
 ```
