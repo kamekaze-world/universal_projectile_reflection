@@ -1,0 +1,63 @@
+#Designed to work on nightly as of july IKEMEN GO. 
+#Do NOT ask me to make it work for anything older it's impossible.
+[statedef +1]
+#something is reflecting
+for i=55;600;1{
+
+if playeridexist($i) && playerid($i),teamside!=teamside && playerid($i),map(k_reflecting) {
+map(k_op_rf):=$i;
+break;
+}
+
+if map(k_op_rf){
+map(k_op_rf):=0;
+}
+
+}
+
+if  map(k_op_rf) {
+#helpers
+if ishelper && movetype=A && hitdefattr=SCA,AP && !sysvar(1)  
+{
+if ClsnOverlap(clsn2, playerid(map(k_op_rf)),id, clsn1)  && teamside !=playerid(map(k_op_rf)),teamside
+{
+
+let vx = vel x;
+let vy = vel y;
+Turn{}
+velset{x:$vx;y:$vy}
+
+
+
+modifyplayer{teamside:cond(teamside=2,1,2)}
+}
+
+}
+
+#projectiles
+if !ishelper && numproj {
+for i=0;numproj;1 {
+
+if projvar(-1,$i,teamside)!=teamside{
+continue;
+}
+else{
+printtoconsole{text:"rfpj %d";params:$i}
+
+if ProjClsnOverlap($i, playerid(map(k_op_rf)),id, clsn1){
+let pv = projvar(-1,$i,projid);
+let vx = projvar(-1,$i,vel x);
+let vy = projvar(-1,$i,vel y);
+ModifyProjectile{id:$pv;index:0; velocity: -$vx,-$vy;ProjAngle:180;ProjClsnAngle:180;teamside:cond(teamside=2,1,2)}
+
+break;
+}
+
+}
+
+
+}
+}
+
+#end reflect check  
+}
