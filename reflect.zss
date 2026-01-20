@@ -50,7 +50,10 @@ if ProjClsnOverlap($i, playerid(map(k_op_rf)),id, clsn1){
 let pv = projvar(-1,$i,projid);
 let vx = projvar(-1,$i,vel x);
 let vy = projvar(-1,$i,vel y);
+
+if ($pv&const(bit16))<const(bit16) {
 ModifyProjectile{id:$pv;index:0; velocity: -$vx,-$vy;ProjAngle:180;ProjClsnAngle:180;teamside:cond(teamside=2,1,2)}
+}
 
 break;
 }
