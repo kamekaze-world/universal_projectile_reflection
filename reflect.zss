@@ -17,23 +17,43 @@ map(k_op_rf):=0;
 
 }
 
-if  map(k_op_rf) {
+#I can be reflected!
+if map(k_op_rf){
 #helpers
-if ishelper && movetype=A && hitdefattr=SCA,AP && !sysvar(1)  
+if ishelper && movetype=A && hitdefattr=SCA,AP && !sysvar(1)  && playerid(map(k_op_rf)),map(k_reflecting) 
 {
+
 if ClsnOverlap(clsn2, playerid(map(k_op_rf)),id, clsn1)  && teamside !=playerid(map(k_op_rf)),teamside
 {
 
+if !playerid(map(k_op_rf)),map(rmodx){
+playerid(map(k_op_rf)),map(rmodx):=1;
+}
+
+if !playerid(map(k_op_rf)),map(rmody){
+playerid(map(k_op_rf)),map(rmody):=1;
+}
+
 let vx = vel x;
-let vy = vel y;
+let vy = -vel y;
 Turn{}
-velset{x:$vx;y:$vy}
 
+if vel y{
+map(rotv):=1;
+}
 
+velset{x:$vx*playerid(map(k_op_rf)),map(rmodx);y:$vy*playerid(map(k_op_rf)),map(rmodx)} 
 
 modifyplayer{teamside:cond(teamside=2,1,2)}
 }
 
+}
+
+
+ignorehitpause if map(rotv) && animelemvar(numclsn1){
+
+angledraw{value:90}
+transformclsn{angle:90}
 }
 
 #projectiles
