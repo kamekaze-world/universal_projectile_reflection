@@ -1,5 +1,5 @@
-# Universal Projectile Reflect 1.0
-###### FOR IKEMEN GO Nightly 7/30/25 OR LATER
+# Universal Projectile Reflect 1.1
+###### FOR IKEMEN GO Nightly 7/30/25 (or 1.0) OR LATER
 
 ## Instructions
 
@@ -93,3 +93,19 @@ redirectid=p2,id
 ```
 
 As you can see, it doesn't matter if a helper or player sets this map because we're setting the map of the opponent.
+
+
+##Using the modifiers:
+
+
+### I am a non-helper that reflects and will make their projectile 20% faster once I reflect them:
+```
+[State 0, MapSet]
+type = MapSet
+trigger1 = animelem=3
+trigger1 = map(rmodx):=1.2
+trigger1 = map(rmody):=1.2
+Map = "k_reflecting";map name
+value =id
+redirectid=p2,id
+```
