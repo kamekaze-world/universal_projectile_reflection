@@ -18,9 +18,9 @@ uses projectiles for priority shields you must do both of these things. Also,
 your helper must be using projectile hit attributes or it will get ignored aka NP,SP,HP,AP **
 
 ### Maps you can modify (as the person who reflects)
-map(rmodx) - this value will allow you to change the x velocity of the opponent's projectile as a multiplier
-map(rmody) - this value will allow you to change the y velocity of the opponent's projectile as a multiplier
-map(k_reflecting) - This value will indicate that you will reflect any and all helpers/projectiles that are not marked as unreflectable with your clsn1
+**map(rmodx)** - this value will allow you to change the x velocity of the opponent's projectile as a multiplier
+**map(rmody)** - this value will allow you to change the y velocity of the opponent's projectile as a multiplier
+**map(k_reflecting)** - This value will indicate that you will reflect any and all helpers/projectiles that are not marked as unreflectable with your clsn1
 
 EG for helpers in cns
 ```
